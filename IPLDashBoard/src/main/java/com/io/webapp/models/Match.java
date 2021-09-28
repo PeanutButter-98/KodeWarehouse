@@ -2,7 +2,15 @@ package com.io.webapp.models;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "match")
 public class Match {
+
+	@Id
 	private long id;
 	private String city;
 	private LocalDate date;
@@ -128,6 +136,10 @@ public class Match {
 
 	public void setUmpire2(String umpire2) {
 		this.umpire2 = umpire2;
+	}
+
+	public Match() {
+		super();
 	}
 
 }

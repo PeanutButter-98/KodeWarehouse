@@ -1,8 +1,13 @@
 package com.io.webapp.data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 
 public class MatchInput {
 
+	@Id
 	private String id;
 	private String city;
 	private String date;
@@ -11,6 +16,7 @@ public class MatchInput {
 	private String neutral_venue;
 	private String team1;
 	private String team2;
+
 	private String toss_winner;
 	private String toss_decision;
 	private String winner;
@@ -20,6 +26,10 @@ public class MatchInput {
 	private String method;
 	private String umpire1;
 	private String umpire2;
+
+	public MatchInput() {
+		super();
+	}
 
 	public String getId() {
 		return id;
