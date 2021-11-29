@@ -27,8 +27,8 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 			log.info("!!! JOB FINISHED! Time to verify the results");
 
 			jdbcTemplate
-					.query("SELECT team1, team2, date FROM match", (rs, row) -> "Team 1 " + rs.getString(1) + " Team 2 "
-							+ rs.getString(2) + " Team 3" + rs.getString(3))
+					.query("SELECT team1, team2, date FROM match", (rs, row) -> "Team 1: " + rs.getString(1) + " Team 2: "
+							+ rs.getString(2) + " Date: " + rs.getString(3))
 					.forEach(str -> log.info("Found <" + str + "> in the database."));
 		}
 	}

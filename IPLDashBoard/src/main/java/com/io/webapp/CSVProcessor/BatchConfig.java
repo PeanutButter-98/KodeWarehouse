@@ -66,6 +66,8 @@ public class BatchConfig {
 				.end().build();
 	}
 
+	
+	//This method is actual Job which will do all the work sequentially
 	@Bean
 	public Step step1(JdbcBatchItemWriter<Match> writer) {
 		return stepBuilderFactory.get("step1").<MatchInput, Match>chunk(10).reader(reader()).processor(processor())
